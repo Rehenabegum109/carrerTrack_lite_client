@@ -1,40 +1,128 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layout/MainLayout";
-import NotFound from "../pages/NotFound";
 
+import MainLayout from "../layout/MainLayout";
+import DashboardLayout from "../layout/DashboardLayout";
+
+import Home from "../pages/Home/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+
 import Dashboard from "../pages/Dashboard";
 import Applications from "../pages/Applications";
-import Home from "../pages/Home/Home";
+
+import AddApplication from "../pages/Application/AddApplication";
+import EditApplication from "../pages/Application/EditApplication";
+import ApplicationDetails from "../pages/Application/ApplicationDetails";
+import DeleteApplication from "../pages/Application/DeleteApplication";
+import Profile from "../pages/Application/Profile";
+
+import NotFound from "../pages/NotFound";
+import PrivateRoute from "./PrivetRoute";
+
+
 
 
 export const router = createBrowserRouter([
+
+
+
   {
     path: "/",
     element: <MainLayout />,
     errorElement: <NotFound />,
+
     children: [
+
       {
         index: true,
         element: <Home />,
       },
+
+
       {
         path: "login",
         element: <Login />,
       },
+
+
       {
         path: "register",
-        element: <Register/>,
+        element: <Register />,
       },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path: "applications",
-        element: <Applications />,
-      },
+
     ],
   },
+
+
+
+
+
+  
+  {
+    path: "/",
+    element: <PrivateRoute />,
+
+    children: [
+
+      {
+        element: <DashboardLayout />,
+
+        children: [
+
+
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+
+
+
+          {
+            path: "applications",
+            element: <Applications />,
+          },
+
+
+
+          {
+            path: "applications/new",
+            element: <AddApplication />,
+          },
+
+
+
+          {
+            path: "applications/:id",
+            element: <ApplicationDetails />,
+          },
+
+
+
+          {
+            path: "applications/edit/:id",
+            element: <EditApplication />,
+          },
+
+
+
+          {
+            path: "applications/delete/:id",
+            element: <DeleteApplication />,
+          },
+
+
+
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+
+
+        ],
+
+      },
+
+    ],
+  },
+
 ]);

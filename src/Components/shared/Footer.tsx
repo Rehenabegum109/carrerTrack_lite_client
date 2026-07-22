@@ -166,6 +166,43 @@ const Footer = () => {
 
         {/* Bottom */}
 
+
+{/* Bottom */}
+
+<div
+  className="
+  mt-12
+  border-t
+  border-white/10
+  pt-6
+  flex flex-col md:flex-row
+  items-center
+  justify-between
+  gap-3
+  text-sm
+  text-gray-400
+  "
+>
+  <p>
+    © 2026 CareerTrack Lite. All rights reserved.
+  </p>
+
+  <div className="text-center md:text-right">
+    <p>
+      Developed by{" "}
+      <span className="font-semibold text-white">
+        Rehena Begum
+      </span>
+    </p>
+
+    <p>
+      Student ID:{" "}
+      <span className="font-semibold text-emerald-400">
+        L2B7-0842
+      </span>
+    </p>
+  </div>
+</div>
         <div
           className="
           mt-12
