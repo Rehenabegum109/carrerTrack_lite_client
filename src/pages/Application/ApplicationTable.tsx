@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   applications: any[];
-  reload: () => Promise<void>;
+reload?: () => Promise<void>;
 }
 
 
@@ -43,7 +43,7 @@ const badgeColor = (status: string) => {
 
 const ApplicationTable = ({
   applications,
-  reload,
+  
 }: Props) => {
 
 
@@ -124,6 +124,7 @@ const ApplicationTable = ({
                   <button
                     onClick={() =>
                       navigate(`/applications/delete/${item.id}`)
+                      
                     }
                     className="btn btn-sm btn-error"
                   >
