@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { User, Mail } from "lucide-react";
 import { toast } from "sonner";
-import { axiosInstance } from "../../utils/axios";
+
 import { getMe } from "../../services/auth";
 
 
