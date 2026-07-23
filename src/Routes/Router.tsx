@@ -18,6 +18,7 @@ import Profile from "../pages/Application/Profile";
 
 import NotFound from "../pages/NotFound";
 import PrivateRoute from "./PrivetRoute";
+import About from "../pages/About";
 
 
 
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
         path: "register",
         element: <Register />,
       },
+      {
+        path:"about",
+        element: <About/>
+      }
 
     ],
   },
